@@ -1,0 +1,8 @@
+{
+  "name": "Krishi-Mart",
+  "description": "A hyperlocal, farmer-first digital marketplace connecting farmers directly with consumers using fair pricing and simple delivery logic.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
