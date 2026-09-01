@@ -1,4 +1,4 @@
-# 🌾 Krishi Mart
+# Krishi Mart
 
 > **Krishi Mart** is an agriculture-focused digital marketplace and ecosystem designed to connect farmers with buyers while also helping farmers access agricultural inputs, machinery, market intelligence, and future AI-powered advisory services.
 
@@ -7,32 +7,32 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [Current Architecture](#-current-architecture)
-- [What We Have Built](#-what-we-have-built)
-- [User Roles](#-user-roles)
-- [Outfield](#-outfield)
-- [Infield](#-infield)
-- [Admin Control Tower](#-admin-control-tower)
-- [Cloudinary Media Engine](#-cloudinary-media-engine)
-- [Current User Journeys](#-current-user-journeys)
-- [Current Data Architecture](#-current-data-architecture)
-- [Technology Stack](#-technology-stack)
-- [Current Limitations](#-current-limitations)
-- [Security Findings](#-security-findings)
-- [Krishi Mart 2.0 Vision](#-krishi-mart-20-vision)
-- [AI Strategy](#-ai-strategy)
-- [High-Moat Ideas](#-high-moat-ideas)
-- [Production Architecture](#-production-architecture)
-- [Development Roadmap](#-development-roadmap)
-- [What We Are Deliberately Not Building Yet](#-what-we-are-deliberately-not-building-yet)
-- [Vision](#-vision)
+- [Overview](#overview)
+- [Current Architecture](#current-architecture)
+- [What We Have Built](#what-we-have-built)
+- [User Roles](#user-roles)
+- [Outfield](#outfield)
+- [Infield](#infield)
+- [Admin Control Tower](#admin-control-tower)
+- [Cloudinary Media Engine](#cloudinary-media-engine)
+- [Current User Journeys](#current-user-journeys)
+- [Current Data Architecture](#current-data-architecture)
+- [Technology Stack](#technology-stack)
+- [Current Limitations](#current-limitations)
+- [Security Findings](#security-findings)
+- [Krishi Mart 2.0 Vision](#krishi-mart-20-vision)
+- [AI Strategy](#ai-strategy)
+- [High-Moat Ideas](#high-moat-ideas)
+- [Production Architecture](#production-architecture)
+- [Development Roadmap](#development-roadmap)
+- [What We Are Deliberately Not Building Yet](#what-we-are-deliberately-not-building-yet)
+- [Vision](#vision)
 
 ---
 
-# 🌱 Overview
+# Overview
 
 Krishi Mart started as a marketplace concept focused on solving two sides of the agricultural ecosystem:
 
@@ -73,7 +73,7 @@ The long-term goal is to evolve Krishi Mart from a simple marketplace into a **d
 
 ---
 
-# 🏗️ Current Architecture
+# Current Architecture
 
 Krishi Mart is currently a **client-side React Single Page Application**.
 
@@ -124,9 +124,9 @@ The current project is therefore a **functional prototype, not yet a production 
 
 ---
 
-# 🚀 What We Have Built
+# What We Have Built
 
-## 1. 🔐 Authentication & Session Manager
+## 1. Authentication & Session Manager
 
 ### Implemented
 
@@ -144,7 +144,7 @@ The current project is therefore a **functional prototype, not yet a production 
 
 ### Current status
 
-🟡 **Functional Prototype**
+[Prototype] **Functional Prototype**
 
 ### Current limitation
 
@@ -152,7 +152,7 @@ Authentication is currently handled in the browser using localStorage. Passwords
 
 ---
 
-# 🌾 2. Farmer Dashboard
+# 2.Farmer Dashboard
 
 The Farmer Dashboard is the main farmer-facing workspace.
 
@@ -197,13 +197,13 @@ Approve / Reject
 
 ### Current status
 
-🟡 **Functional Prototype**
+[Prototype] **Functional Prototype**
 
 Listings are currently stored in client-side application state and are not synchronized between different users/devices.
 
 ---
 
-# 🛒 3. Consumer Produce Marketplace
+# 3.Consumer Produce Marketplace
 
 The consumer-facing marketplace allows users to discover farmer produce.
 
@@ -236,11 +236,11 @@ The application uses browser geolocation and Haversine distance calculations, wi
 
 ### Current status
 
-🟢 **Strong Client-Side Prototype**
+[Complete] **Strong Client-Side Prototype**
 
 ---
 
-# 📦 4. Bulk Crop Marketplace
+# 4.Bulk Crop Marketplace
 
 Krishi Mart also contains a bulk wholesale flow intended for:
 
@@ -281,7 +281,7 @@ Direct Farmer Conversation
 
 ### Current status
 
-🟡 **Functional Prototype**
+[Prototype] **Functional Prototype**
 
 ### Still missing
 
@@ -294,7 +294,7 @@ Direct Farmer Conversation
 
 ---
 
-# 🛍️ 5. Infield Agricultural Input Store
+# 5.Infield Agricultural Input Store
 
 The Infield store focuses on helping farmers obtain the things they need to grow crops.
 
@@ -320,7 +320,7 @@ The Infield store focuses on helping farmers obtain the things they need to grow
 
 ### Current status
 
-🟢 **Functional Client-Side Prototype**
+[Complete] **Functional Client-Side Prototype**
 
 ### Still missing
 
@@ -333,7 +333,7 @@ The Infield store focuses on helping farmers obtain the things they need to grow
 
 ---
 
-# 🚜 6. Agricultural Machinery Rental
+# 6.Agricultural Machinery Rental
 
 Krishi Mart includes an Infield machinery rental concept.
 
@@ -358,7 +358,7 @@ Krishi Mart includes an Infield machinery rental concept.
 
 ### Current status
 
-🔵 **UI / Mock Prototype**
+[Mock/Static] **UI / Mock Prototype**
 
 ### Still missing
 
@@ -373,7 +373,7 @@ Krishi Mart includes an Infield machinery rental concept.
 
 ---
 
-# 🛡️ 7. Admin Control Tower
+# 7.Admin Control Tower
 
 An administrative control interface has been created for managing the prototype marketplace.
 
@@ -413,11 +413,11 @@ The prototype includes an emergency/demo reset capability to restore initial see
 
 ### Current status
 
-🟢 **Functional Client-Side Prototype**
+[Complete] **Functional Client-Side Prototype**
 
 ---
 
-# ☁️ 8. Cloudinary Media Engine
+# 8.Cloudinary Media Engine
 
 One of the strongest technically implemented parts of the current prototype is the media pipeline.
 
@@ -453,7 +453,7 @@ fill/crop transformations
 
 ### Current status
 
-🟢 **Working Integration**
+[Complete] **Working Integration**
 
 ### Security improvement required
 
@@ -461,7 +461,7 @@ The current unsigned upload configuration is exposed to the client. A production
 
 ---
 
-# 📊 9. Mandi Price Intelligence
+# 9.Mandi Price Intelligence
 
 A Mandi pricing concept has already been integrated into the UI.
 
@@ -474,7 +474,7 @@ A Mandi pricing concept has already been integrated into the UI.
 
 ### Current status
 
-🔵 **Mock / Static Data**
+[Mock/Static] **Mock / Static Data**
 
 ### Future
 
@@ -482,7 +482,7 @@ Replace static prices with reliable live market data and historical intelligence
 
 ---
 
-# 🏛️ 10. Government Schemes
+# 10.Government Schemes
 
 Krishi Mart contains a government scheme section.
 
@@ -493,7 +493,7 @@ Krishi Mart contains a government scheme section.
 
 ### Current status
 
-🔵 **Mock / Static Data**
+[Mock/Static] **Mock / Static Data**
 
 ### Future
 
@@ -508,7 +508,7 @@ Potential capabilities:
 
 ---
 
-# 📞 11. Village Agent / Offline Support Concept
+# 11.Village Agent / Offline Support Concept
 
 The current prototype contains a local field-agent concept.
 
@@ -547,13 +547,13 @@ The product detail experience includes:
 
 ### Current status
 
-🟡 **Prototype**
+[Prototype] **Prototype**
 
 Reviews currently use local React state and therefore are not yet permanently stored in a production database.
 
 ---
 
-# 📱 Current User Journeys
+# Current User Journeys
 
 ## Farmer
 
@@ -652,7 +652,7 @@ Admin Control Tower
 
 ---
 
-# 🗃️ Current Data Architecture
+# Current Data Architecture
 
 The current prototype does **not** use a remote database.
 
@@ -690,7 +690,7 @@ This is suitable for a prototype but not for a real multi-user marketplace.
 
 ---
 
-# 💻 Technology Stack
+# Technology Stack
 
 ## Frontend
 
@@ -726,15 +726,15 @@ localStorage
 
 There is currently:
 
-- ❌ No Node.js/Express backend
-- ❌ No PostgreSQL/MySQL/MongoDB production database
-- ❌ No real payment gateway
-- ❌ No real AI API
-- ❌ No server-side RBAC
+- - No Node.js/Express backend
+- - No PostgreSQL/MySQL/MongoDB production database
+- - No real payment gateway
+- - No real AI API
+- - No server-side RBAC
 
 ---
 
-# ⚠️ Current Limitations
+# [Warning] Current Limitations
 
 Krishi Mart 1.0 is intentionally a prototype and therefore has several limitations.
 
@@ -789,13 +789,13 @@ Krishi Mart 1.0 is intentionally a prototype and therefore has several limitatio
 
 ---
 
-# 🔐 Security Findings
+# Security Findings
 
 The current prototype should **not be treated as production-ready for real financial or sensitive user data**.
 
-## 🔴 Critical
+## [Critical / Not Implemented] Critical
 
-### 1. Plaintext passwords
+### 1.Plaintext passwords
 
 Passwords are stored in browser storage.
 
@@ -806,7 +806,7 @@ Passwords are stored in browser storage.
 - Secure sessions
 - HTTP-only cookies
 
-### 2. Client-side authorization
+### 2.Client-side authorization
 
 A user's role is controlled by client-side state/localStorage.
 
@@ -816,7 +816,7 @@ A user's role is controlled by client-side state/localStorage.
 - Verified authentication tokens/session
 - Authorization on every protected API
 
-### 3. Client-controlled pricing
+### 3.Client-controlled pricing
 
 The current prototype performs order calculations on the client.
 
@@ -827,9 +827,9 @@ The current prototype performs order calculations on the client.
 - Server-side total calculation
 - Transaction-safe stock reservation
 
-## 🟠 High
+## [High] High
 
-### 4. Personal information exposure
+### 4.Personal information exposure
 
 Farmer/agent phone information and location-related information should not be unnecessarily exposed in a public client bundle.
 
@@ -840,7 +840,7 @@ Farmer/agent phone information and location-related information should not be un
 - Approximate location where appropriate
 - Protected APIs
 
-### 5. Cloudinary unsigned upload abuse
+### 5.Cloudinary unsigned upload abuse
 
 Unsigned upload configuration can be abused if exposed publicly.
 
@@ -853,7 +853,7 @@ Unsigned upload configuration can be abused if exposed publicly.
 
 ---
 
-# 🚀 Krishi Mart 2.0 Vision
+# Krishi Mart 2.0 Vision
 
 Krishi Mart 2.0 aims to become more than an agriculture marketplace.
 
@@ -884,11 +884,11 @@ The goal is a connected ecosystem:
 
 ---
 
-# 🤖 AI Strategy
+# AI Strategy
 
 AI should be used where it solves real agricultural problems rather than simply adding an AI chatbot.
 
-## 1. 🗣️ Kisan Sathi — Vernacular Voice Assistant
+## 1. Kisan Sathi — Vernacular Voice Assistant
 
 A farmer could say:
 
@@ -915,7 +915,7 @@ Reduce complicated typing and digital literacy barriers.
 
 ---
 
-## 2. 📷 AI Crop Disease Detection
+## 2. AI Crop Disease Detection
 
 Farmer uploads a crop/leaf photo.
 
@@ -932,7 +932,7 @@ The system should be grounded in trusted agricultural sources and should avoid u
 
 ---
 
-## 3. 🥬 AI Crop Quality Grading
+## 3. AI Crop Quality Grading
 
 Use crop images to assist with:
 
@@ -945,7 +945,7 @@ Use crop images to assist with:
 
 ---
 
-## 4. 📈 Mandi Price Intelligence
+## 4. Mandi Price Intelligence
 
 Combine market data and historical information to help answer:
 
@@ -958,7 +958,7 @@ Combine market data and historical information to help answer:
 
 ---
 
-## 5. ♻️ Crop Residue / Biomass Matching
+## 5. Crop Residue / Biomass Matching
 
 Connect farmers with potential buyers of:
 
@@ -978,15 +978,15 @@ Potential buyers include:
 
 ---
 
-# 🧠 High-Moat Ideas
+# High-Moat Ideas
 
 These are potential long-term differentiators.
 
-## 1. Kisan Sathi Voice-to-Listing
+## 1.Kisan Sathi Voice-to-Listing
 
 Audio-first agricultural marketplace interaction.
 
-## 2. FPO Collective Buying
+## 2.FPO Collective Buying
 
 Aggregate demand from multiple farmers to negotiate better input prices.
 
@@ -998,7 +998,7 @@ Farmer D ─┤
 Farmer E ─┘
 ```
 
-## 3. Smart Mandi Escrow
+## 3.Smart Mandi Escrow
 
 Buyer deposits funds before fulfillment.
 
@@ -1018,17 +1018,17 @@ Delivery
 Final Settlement
 ```
 
-## 4. Agricultural Waste Marketplace
+## 4.Agricultural Waste Marketplace
 
 Turn crop residue into a potential revenue source.
 
-## 5. Kisan Mitra Field Network
+## 5.Kisan Mitra Field Network
 
 Local field agents can bridge the digital literacy gap.
 
 ---
 
-# 🏭 Recommended Production Architecture
+# Recommended Production Architecture
 
 The target production architecture is:
 
@@ -1084,7 +1084,7 @@ The target production architecture is:
 
 ---
 
-# 🗺️ Development Roadmap
+# Development Roadmap
 
 ## Phase 0 — Security & Foundation
 
@@ -1166,7 +1166,7 @@ Build:
 
 ---
 
-# 🚫 What We Are Deliberately Not Building Yet
+# What We Are Deliberately Not Building Yet
 
 Krishi Mart should avoid unnecessary complexity during the early stage.
 
@@ -1185,7 +1185,7 @@ The focus should remain:
 
 ---
 
-# 🎯 Current Priorities
+# Current Priorities
 
 The most important transition is:
 
@@ -1217,7 +1217,7 @@ Logistics + Agriculture Ecosystem
 
 ---
 
-# 💡 Our Core Product Philosophy
+# Our Core Product Philosophy
 
 Krishi Mart should not become an application with hundreds of disconnected features.
 
@@ -1246,7 +1246,7 @@ Every major feature should answer at least one question:
 
 ---
 
-# 🏆 Long-Term Vision
+# Long-Term Vision
 
 Our strongest potential competitive advantage is the combination of:
 
@@ -1258,32 +1258,32 @@ Instead of building only a marketplace, Krishi Mart aims to become:
 
 ---
 
-## 📌 Project Status
+## Project Status
 
 | Area | Current Status |
 |---|---|
-| React Frontend | 🟢 Built |
-| Farmer Dashboard | 🟢 Built |
-| Consumer Marketplace | 🟢 Built |
-| Bulk Marketplace | 🟡 Prototype |
-| Infield Store | 🟢 Built |
-| Machinery Rental | 🔵 Prototype |
-| Admin Control Tower | 🟢 Built |
-| Cloudinary Media | 🟢 Integrated |
-| Mandi Prices | 🔵 Static |
-| Government Schemes | 🔵 Static |
-| Authentication | 🟡 Prototype |
-| Backend | 🔴 Not implemented |
-| Production Database | 🔴 Not implemented |
-| Payments | 🔴 Not implemented |
-| Real AI | 🔴 Not implemented |
-| Voice Assistant | 🔴 Not implemented |
-| Logistics | 🔴 Not implemented |
-| Production RBAC | 🔴 Not implemented |
+| React Frontend | [Complete] Built |
+| Farmer Dashboard | [Complete] Built |
+| Consumer Marketplace | [Complete] Built |
+| Bulk Marketplace | [Prototype] Prototype |
+| Infield Store | [Complete] Built |
+| Machinery Rental | [Mock/Static] Prototype |
+| Admin Control Tower | [Complete] Built |
+| Cloudinary Media | [Complete] Integrated |
+| Mandi Prices | [Mock/Static] Static |
+| Government Schemes | [Mock/Static] Static |
+| Authentication | [Prototype] Prototype |
+| Backend | [Critical / Not Implemented] Not implemented |
+| Production Database | [Critical / Not Implemented] Not implemented |
+| Payments | [Critical / Not Implemented] Not implemented |
+| Real AI | [Critical / Not Implemented] Not implemented |
+| Voice Assistant | [Critical / Not Implemented] Not implemented |
+| Logistics | [Critical / Not Implemented] Not implemented |
+| Production RBAC | [Critical / Not Implemented] Not implemented |
 
 ---
 
-## 🌾 Krishi Mart
+## Krishi Mart
 
 **From farm to market. From information to action.**
 

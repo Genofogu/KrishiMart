@@ -329,9 +329,9 @@ export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({ products, onAd
                     
                     <div className={`pt-2 border-t text-[10px] ${isEligible ? 'border-emerald-50' : 'border-gray-200'}`}>
                       {isEligible ? (
-                        <span className="text-emerald-700 font-bold">✓ Land requirement satisfied</span>
+                        <span className="text-emerald-700 font-bold">Land requirement satisfied</span>
                       ) : (
-                        <span className="text-red-600 font-bold">✗ Needs {scheme.minLandAcres - userLandSize} more acres</span>
+                        <span className="text-red-600 font-bold">Needs {scheme.minLandAcres - userLandSize} more acres</span>
                       )}
                     </div>
                   </div>
