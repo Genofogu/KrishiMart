@@ -18,6 +18,9 @@ export interface User {
   landSizeAcres?: number;
   location?: GeoLocation; // Current detected or manual location
   address?: string; // Specific Farm or Delivery Address
+  avatarUrl?: string; // Cloudinary avatar URL
+  farmPhotos?: string[]; // Cloudinary farm photos
+  documents?: { id: string; name: string; url: string; uploadDate: string; type: string }[]; // Verified certificates
 }
 
 export interface GeoLocation {
@@ -82,6 +85,59 @@ export interface Review {
   rating: number;
   comment: string;
   reviewDate: string;
+  images?: string[]; // Cloudinary review photos
+}
+
+// CLOUDINARY TYPES
+export interface CloudinaryConfig {
+  cloudName: string;
+  uploadPreset: string;
+  apiKey?: string;
+  defaultFolder?: string;
+}
+
+export interface CloudinaryUploadResult {
+  public_id: string;
+  secure_url: string;
+  url: string;
+  format: string;
+  width: number;
+  height: number;
+  bytes: number;
+  created_at: string;
+  resource_type: string;
+  original_filename?: string;
+  tags?: string[];
+  thumbnail_url?: string;
+  etag?: string;
+}
+
+export interface CloudinaryTransformationOptions {
+  width?: number;
+  height?: number;
+  crop?: 'fill' | 'thumb' | 'scale' | 'fit' | 'limit' | 'pad' | 'crop';
+  quality?: 'auto' | 'auto:best' | 'auto:good' | 'auto:eco' | 'auto:low' | number;
+  format?: 'auto' | 'webp' | 'avif' | 'png' | 'jpg';
+  gravity?: 'auto' | 'face' | 'center' | 'north' | 'south' | 'east' | 'west';
+  radius?: 'max' | number;
+  blur?: number;
+  effect?: string;
+  aspectRatio?: string;
+  fetchFormat?: string;
+}
+
+export interface CloudinaryAsset {
+  id: string;
+  name: string;
+  url: string;
+  publicId: string;
+  format: string;
+  sizeBytes: number;
+  width?: number;
+  height?: number;
+  uploadedAt: number;
+  category: 'produce' | 'farm' | 'avatar' | 'document' | 'review' | 'other';
+  tags: string[];
 }
 
 export interface Seller {

@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { MapPin, Truck, CheckCircle, Star, Search, ArrowRight, User, X, Tag, ShoppingBag, Layers, Phone, MessageCircle, ArrowLeft, Navigation, Scale, Filter, Info, AlertCircle } from 'lucide-react';
+import { MapPin, Truck, CheckCircle, Star, Search, ArrowRight, User, X, Tag, ShoppingBag, Layers, Phone, MessageCircle, ArrowLeft, Navigation, Scale, Filter, Info, AlertCircle, Cloud } from 'lucide-react';
 import { Product, Village, Category, GeoLocation, BulkCrop, BulkFarmerOffer, AuditAction } from '../types';
 import { VILLAGE_DISTANCES, MOCK_BULK_CROPS, MOCK_BULK_OFFERS } from '../constants';
+import { CloudinaryImage } from './CloudinaryImage';
 
 interface ConsumerDashboardProps {
   products: Product[];
@@ -170,7 +171,14 @@ export const ConsumerDashboard: React.FC<ConsumerDashboardProps> = ({ products, 
 
           <div className="p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img src={selectedBulkCrop.image} className="w-24 h-24 rounded-xl object-cover shadow-md" alt={selectedBulkCrop.name} />
+              <div className="w-24 h-24 rounded-xl overflow-hidden shadow-md shrink-0">
+                <CloudinaryImage 
+                  src={selectedBulkCrop.image} 
+                  alt={selectedBulkCrop.name}
+                  transformations={{ width: 200, height: 200, crop: 'fill', quality: 'auto' }}
+                  className="w-full h-full object-cover" 
+                />
+              </div>
               <div>
                 <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Bulk Offer For</div>
                 <h2 className="text-2xl font-black text-gray-800">{selectedBulkCrop.name}</h2>
@@ -311,8 +319,13 @@ export const ConsumerDashboard: React.FC<ConsumerDashboardProps> = ({ products, 
                      onClick={() => onSelectProduct(product)}
                      className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group"
                    >
-                      <div className="h-48 overflow-hidden relative">
-                        <img src={product.images[0]} alt={product.productName} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div className="h-48 overflow-hidden relative bg-gray-900">
+                        <CloudinaryImage 
+                          src={product.images[0]} 
+                          alt={product.productName} 
+                          transformations={{ width: 450, height: 300, crop: 'fill', quality: 'auto' }}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
                         <div className="absolute top-2 right-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-black uppercase text-green-700 shadow-sm">
                           {product.category}
                         </div>
@@ -368,7 +381,14 @@ export const ConsumerDashboard: React.FC<ConsumerDashboardProps> = ({ products, 
                    onClick={() => setSelectedBulkCrop(crop)}
                    className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-lg hover:border-green-400 transition-all cursor-pointer flex items-center gap-4 group"
                  >
-                   <img src={crop.image} alt={crop.name} className="w-20 h-20 rounded-lg object-cover bg-gray-100 group-hover:scale-105 transition-transform" />
+                   <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-gray-100">
+                     <CloudinaryImage 
+                       src={crop.image} 
+                       alt={crop.name} 
+                       transformations={{ width: 160, height: 160, crop: 'fill', quality: 'auto' }}
+                       className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                     />
+                   </div>
                    <div className="flex-1">
                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors">{crop.name}</h3>
                      <div className="text-xs text-gray-500 mb-2">{crop.category}</div>

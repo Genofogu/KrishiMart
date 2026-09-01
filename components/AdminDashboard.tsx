@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Product, ProductStatus, User, AuditLog, GovernmentScheme, AnalyticsData } from '../types';
 import { CheckCircle, XCircle, TrendingUp, Users, Landmark, Phone, Package, Star, ShieldAlert, History, BarChart3, RefreshCw, AlertTriangle, ArrowUp, ArrowDown } from 'lucide-react';
 import { MANDI_PRICES, OFFLINE_AGENTS, GOVERNMENT_SCHEMES } from '../constants';
+import { CloudinaryImage } from './CloudinaryImage';
 
 interface AdminDashboardProps {
   products: Product[];
@@ -80,7 +81,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ products, auditL
                   return (
                     <div key={product.id} className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-500 flex flex-col md:flex-row justify-between gap-6">
                       <div className="flex gap-4 flex-1">
-                        <img src={product.images[0]} alt={product.productName} className="w-20 h-20 rounded-lg object-cover bg-gray-100 border border-gray-200" />
+                        <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-gray-100 border border-gray-200">
+                          <CloudinaryImage 
+                            src={product.images[0]} 
+                            alt={product.productName} 
+                            transformations={{ width: 160, height: 160, crop: 'fill', quality: 'auto' }}
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
                         <div>
                           <h3 className="text-xl font-bold text-gray-900">{product.productName}</h3>
                           <p className="text-gray-600 text-sm">Farmer: {product.farmerName} • {product.villageName}</p>

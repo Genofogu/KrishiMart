@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Package, Truck, Sprout, Hammer, Droplets, MapPin, Store, Search, ArrowRight, ArrowLeft, Star, Clock, Filter, ShoppingCart, ExternalLink, Navigation, Phone, Plus, Minus, Trash2, ShoppingBag, X, Tractor, HardHat, PhoneCall, MessageSquare, CheckCircle, Calendar } from 'lucide-react';
+import { Package, Truck, Sprout, Hammer, Droplets, MapPin, Store, Search, ArrowRight, ArrowLeft, Star, Clock, Filter, ShoppingCart, ExternalLink, Navigation, Phone, Plus, Minus, Trash2, ShoppingBag, X, Tractor, HardHat, PhoneCall, MessageSquare, CheckCircle, Calendar, Cloud } from 'lucide-react';
 import { MOCK_INFIELD_ITEMS, MOCK_SHOPS, MOCK_RENTAL_VEHICLES, MOCK_RENTAL_PROVIDERS } from '../constants';
 import { InfieldItem, Shop, GeoLocation, InputCategory, RentalVehicle, RentalProvider, AuditAction } from '../types';
+import { CloudinaryImage } from './CloudinaryImage';
 
 interface InfieldStoreProps {
   userLocation?: GeoLocation;
@@ -177,8 +178,14 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
          </button>
 
          <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-            <div className="relative h-64 bg-gray-100">
-               <img src={vehicle.image} alt={vehicle.name} className="w-full h-full object-cover" />
+            <div className="relative h-64 bg-gray-900">
+               <CloudinaryImage 
+                 src={vehicle.image} 
+                 alt={vehicle.name} 
+                 transformations={{ width: 800, height: 500, crop: 'fill', quality: 'auto' }}
+                 className="w-full h-full object-cover" 
+                 enableLightbox
+               />
                <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2">
                  <Tractor size={16} /> {vehicle.type}
                </div>
@@ -276,8 +283,15 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
          <h3 className="font-bold text-xl text-gray-800 mb-4">Available Fleet ({providerVehicles.length})</h3>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {providerVehicles.map(v => (
-              <div key={v.id} onClick={() => setSelectedRentalVehicle(v)} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:border-green-400 cursor-pointer flex gap-4 transition-all">
-                 <img src={v.image} className="w-24 h-24 rounded-lg object-cover bg-gray-100" />
+              <div key={v.id} onClick={() => setSelectedRentalVehicle(v)} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-400 cursor-pointer flex gap-4 transition-all">
+                 <div className="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-gray-100">
+                   <CloudinaryImage 
+                     src={v.image} 
+                     alt={v.name}
+                     transformations={{ width: 180, height: 180, crop: 'fill', quality: 'auto' }}
+                     className="w-full h-full object-cover" 
+                   />
+                 </div>
                  <div>
                    <h4 className="font-bold text-gray-900">{v.name}</h4>
                    <div className="text-xs text-gray-500 mb-2">{v.type}</div>
@@ -334,7 +348,12 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
               cart.map(cItem => (
                 <div key={cItem.id} className="flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
                   <div className="w-16 h-16 bg-white rounded-lg overflow-hidden border border-gray-200 flex-shrink-0">
-                    <img src={cItem.item.images[0]} className="w-full h-full object-cover" />
+                    <CloudinaryImage 
+                      src={cItem.item.images[0]} 
+                      alt={cItem.item.itemName}
+                      transformations={{ width: 120, height: 120, crop: 'fill', quality: 'auto' }}
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-gray-900 text-sm truncate">{cItem.item.itemName}</h4>
@@ -385,7 +404,15 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
         </button>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-fit">
-            <img src={item.images[0]} alt={item.itemName} className="w-full h-80 object-cover" />
+            <div className="w-full h-80 bg-gray-900 overflow-hidden">
+              <CloudinaryImage 
+                src={item.images[0]} 
+                alt={item.itemName} 
+                transformations={{ width: 800, height: 600, crop: 'fill', quality: 'auto' }}
+                className="w-full h-full object-cover" 
+                enableLightbox
+              />
+            </div>
             <div className="p-6">
               <div className="flex justify-between items-start mb-2">
                 <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{item.itemCategory}</span>
@@ -502,8 +529,13 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
 
                   return (
                     <div key={item.itemId} onClick={() => setSelectedItem(item)} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer group">
-                      <div className="h-48 overflow-hidden relative">
-                        <img src={item.images[0]} alt={item.itemName} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                      <div className="h-48 overflow-hidden relative bg-gray-900">
+                        <CloudinaryImage 
+                          src={item.images[0]} 
+                          alt={item.itemName} 
+                          transformations={{ width: 450, height: 300, crop: 'fill', quality: 'auto' }}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                        />
                         <div className="absolute bottom-2 right-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold flex items-center gap-1 shadow-sm">
                           {getCategoryIcon(item.itemCategory)} {item.itemCategory}
                         </div>
@@ -551,8 +583,13 @@ export const InfieldStore: React.FC<InfieldStoreProps> = ({ userLocation, onPlac
                     
                     return (
                        <div key={v.id} onClick={() => setSelectedRentalVehicle(v)} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group">
-                          <div className="h-48 overflow-hidden relative">
-                             <img src={v.image} alt={v.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                          <div className="h-48 overflow-hidden relative bg-gray-900">
+                             <CloudinaryImage 
+                               src={v.image} 
+                               alt={v.name} 
+                               transformations={{ width: 450, height: 300, crop: 'fill', quality: 'auto' }}
+                               className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                             />
                              <div className="absolute top-2 left-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold shadow-sm">{v.type}</div>
                           </div>
                           <div className="p-4">
